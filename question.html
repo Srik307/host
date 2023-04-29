@@ -1,0 +1,89 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+     <link rel="stylesheet" href="quespage.css"/>
+    </head>
+    <body>
+    <div class="container">
+
+       <div class="navbar">
+            <img class="logo-img" src="sat.png"/>
+            <h1>QSPACE</h1>
+            <div class="menu">
+               <h1>GALAXY</h1>
+            </div></div>
+        <div class="clock">
+            <h1 id="clock">
+            </h1>
+        </div>
+            </div>
+               <audio id="ticsound" src="tic.mp3"></audio>
+               <audio id="timeupsound" src="timeup.mp3"></audio>
+               <img id="timepic" src="timer.png"/>   
+     <form id="questions">
+     <div class="box"> <p>1.What is the largest planet in the Solar System?</p>
+		<label><input type="radio" name="q1" value="a"> a) Earth</label><br>
+		<label><input type="radio" name="q1" value="b"> b) Jupiter</label><br>
+		<label><input type="radio" name="q1" value="c"> c) Venus</label><br>
+    </div>
+     <div class="box"><p>2.What is the closest planet to the Sun?</p>
+		<label><input type="radio" name="q2" value="a"> a) Mercury</label><br>
+		<label><input type="radio" name="q2" value="b"> b) Earth</label><br>
+		<label><input type="radio" name="q2" value="c"> c) Venus</label><br>
+</div>
+     <div class="box"><p>3.What is the fifth planet from the Sun?</p>
+		<label><input type="radio" name="q3" value="a"> a) Jupiter</label><br>
+		<label><input type="radio" name="q3" value="b"> b) Mars</label><br>
+		<label><input type="radio" name="q3" value="c"> c) London</label><br>
+</div>
+     <div class="box"><p>4.What is the largest moon in the Solar System?</p>
+		<label><input type="radio" name="q4" value="a"> a) Ganymede</label><br>
+		<label><input type="radio" name="q4" value="b"> b) Moon</label><br>
+		<label><input type="radio" name="q4" value="c"> c) Titan</label><br>
+</div>
+     <div class="box"><p>5.What is the name of the asteroid belt between Mars and Jupiter?</p>
+		<label><input type="radio" name="q5" value="a"> a)Asteroid Belt</label><br>
+		<label><input type="radio" name="q5" value="b"> b) Kuiper Belt</label><br>
+		<label><input type="radio" name="q5" value="c"> c) Jupitero Belt</label><br>
+</div>
+     <div class="box"><p>6.What is the name of the largest volcano in the Solar System?</p>
+		<label><input type="radio" name="q6" value="a"> a) Olympus Mons</label><br>
+		<label><input type="radio" name="q6" value="b"> b) Paro gro</label><br>
+		<label><input type="radio" name="q6" value="c"> c) monte rog</label><br>
+</div>
+     <div class="box"><p>7.Which planet has the most moons?</p>
+		<label><input type="radio" name="q7" value="a"> a) Jupiter</label><br>
+		<label><input type="radio" name="q7" value="b"> b) Neptune</label><br>
+		<label><input type="radio" name="q7" value="c"> c) Saturn</label><br>
+</div>
+     <div class="box"><p>8.What is the name of the largest canyon in the Solar System?</p>
+		<label><input type="radio" name="q8" value="a"> a) Valles Marineris</label><br>
+		<label><input type="radio" name="q8" value="b"> b) Grand Canyon</label><br>
+		<label><input type="radio" name="q8" value="c"> c) marina trench</label><br>
+</div>
+     <div class="box"><p>9.What is the Third Planet in our Solar system?</p>
+		<label><input type="radio" name="q9" value="a"> a) Earth</label><br>
+		<label><input type="radio" name="q9" value="b"> b) Mars</label><br>
+		<label><input type="radio" name="q9" value="c"> c) Venus</label><br>
+</div>
+     <div class="box"><p>10.Which planet is called as Red planet?</p>
+		<label><input type="radio" name="q10" value="a"> a) Mars</label><br>
+		<label><input type="radio" name="q10" value="b"> b) Venus</label><br>
+		<label><input type="radio" name="q10" value="c"> c) Sun</label><br>
+</div>
+</form>
+</div>
+
+<button id='sub'onclick="submitt()">SUBMIT</button>
+<div class="score" id="scorebox">
+     <div class="close">
+     <button onclick="closee()" id="closebut"><img id="clos" src="close.png"/></button>
+</div>
+     <img src="completed.jpg"/>
+     <h1>YOUR SCORE</h1>
+     <h1 id="score"></h1>
+     <h1 id="time"></h1>
+</div>
+<script type="text/javascript" src="ques.js"></script>
+</body>
+</html>

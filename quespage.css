@@ -1,0 +1,143 @@
+body{
+    background-image:url('space.gif');
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+}
+.navbar h1{
+    color:white;
+}
+.logo-img{
+    width: 50px;
+    height: 50px;
+    margin: 20px 10px 10px;
+}
+
+.menu{
+    flex:1;
+    height: fit-content;
+    color: black;
+    font-size: 30px;
+    padding-left:250px;
+}
+.clock{
+    position:fixed;
+    height:fit-content;
+    width: fit-content;
+    top:20px;
+    right:40px;
+    color: black;
+    font-size: 20px;
+}
+#clock{
+    color: black;
+}
+#timepic{
+    width:140px;
+    height: 140px;
+    position:fixed;
+    top:0px;
+    right:0px;
+    z-index: -1;
+
+}
+
+.box {
+    box-sizing: border-box;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    font-size:30px;
+    color:white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: fit-content;
+    background-color:rgba(0,0,0,0.6);
+    z-index:-1;
+}
+.score{
+    text-align: center;
+    left:340px;
+    top:100px;
+    position: fixed;
+    border-radius:10px;
+    background-color:rgb(236, 174, 236);
+    width:500px;
+    background-size:contain;
+    display:none;
+    height:400px;
+}
+#closebut{
+    background-color: transparent;
+    border: transparent;
+}
+.close{
+    text-align: right;
+    height: 10px;
+    width:100%;
+}
+#clos{
+    margin-right: 10px;
+    width:50px;
+    height:50px;
+}
+.score img{
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+}
+#sub{
+    margin-left:380px;
+    width:300px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+button:hover{
+    transform: scale(1.2);
+    background-color: antiquewhite;
+}
+
+@media only screen and (max-width:700px){
+    .box{
+        width:100%;
+        padding: 5px;
+    }
+    .menu{
+        font-size: 10px;
+        padding-left:10px;
+        
+    }
+   .clock{
+    top:33px;
+    left:320px;
+    font-size:9px;
+   }
+   #timepic{
+    top:20px;
+    left:305px;
+    width:60px;
+    height:70px;
+
+   }
+   #sub{
+    margin-left:30px;
+   }
+   .score{
+    width:100%;
+    left:0px;
+   }
+   .box p{
+    font-size:25px;
+   }
+   .box label{
+    font-size:20px;
+   }
+   }
+

@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+     <link rel="stylesheet" href="quizz.css"/>
+    </head>
+    <body>
+    <div class="container">
+
+       <div class="navbar">
+            <img class="logo-img" src="sat.png"/>
+            <h1>QSPACE</h1>
+        </div>
+        <div class="clock">
+            <h1 id="clock">
+            </h1>
+        </div>
+
+        <div class="mainbox">
+            <h1>WELCOME TO QSPACE</h1>
+
+            <div class="ques">
+            <p class="para" id="p0">
+             Quizz name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;: <b> Galaxy</b><br>
+             No.of questions &nbsp;&nbsp;: <b> 10</b><br>
+             Theme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: <b>Space</b><br>
+             Duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; : <b>5 mins</b></p><br>
+            </p></div><br>
+            <button id="start" onclick="start()">Start Quiz</button>
+            </div>
+<script>
+    function start(){
+        location.replace("question.html");
+    }
+</script>
+</body>
+</html>
