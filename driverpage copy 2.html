@@ -150,7 +150,7 @@ function fetchh(){
   locate();
     document.getElementById("h2").innerHTML="STARTED SHARING LOCATION";
     interval=setInterval(function (){
-        fetch("http://localhost:8080/frontend/connect.php",{method:"POST",body:fd}).then(function(response){
+        fetch("http://192.168.12.252:8080/frontend/connect.php",{method:"POST",body:fd}).then(function(response){
             return response.text();
         }).then(function(){console.log(j++);})
       },1000);}
