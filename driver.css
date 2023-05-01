@@ -1,0 +1,99 @@
+#h1{font-family:'Gill Sans';text-align: left; font-size:50px;color:black;opacity:2;}
+      #h2{color:white;}
+      #map {box-shadow:0 10px 10px #FBE4E0;width: 700px; height: 450px; display: flex; float:left;color:red; border-radius: 30px;border: 4px solid rgb(130, 132, 238);}
+      #inputs{box-shadow:0 10px 10px #FBE4E0;color:#3D4578;float:right; text-align:center; width: 600px;height:450px;border-radius:30px;border: 4px solid rgb(130, 132, 238);}
+      #start{ 
+        background-color:white;
+        color:Black; 
+        border-radius:4px;
+        width:content;
+        font-size:28px;
+        position:fixed;
+        top: 300px;
+        right: 120px;
+    }
+      #stop{ 
+        background-color:white;
+        color:Black; 
+        border-radius:4px;
+        width:content;
+        font-size:28px;
+        position:fixed;
+        top: 300px;
+        right: 10px;
+        display: none;
+    }
+      .co{background:none;color:black;border:0.5px;}#lab{color:white;font-size:30px;}
+      #busno{
+        color:black;
+        border-radius:5px;
+        height:30px;
+        font-size:27px;
+        position:fixed;
+        top: 300px;
+        right: 250px;
+    }
+        body{
+        background-image:url('bg.jpg');
+      }
+      .navbar{background:#568EA6;opacity:0.6;width:100%;box-shadow:0 10px 10px #FBE4E0;}
+      #h3{font-weight:bold; font-size:25px;top:20px;right:50px;position:absolute;color:black;}
+      
+
+      @media only screen and (max-width:700px){
+        #map{
+            position: fixed;
+            top:180px;
+            width:100%;
+            margin:auto;
+            height:480px;
+    
+        }
+        #busno{
+            width:180px;
+            height: 25px;
+            position:fixed;
+            top:140px;
+            left:80px;
+        }
+        .navbar{
+            height:65px;
+        }
+        #h1{
+            font-size: 35px;
+            margin-left: 30px;
+        }
+        #h3{
+            right: 10px;
+            position: fixed;
+            top:55px;
+            font-size: medium;
+        }
+        #map{
+            margin: auto;
+            margin-top: 100px;
+            height: 350px;
+            border:none;
+        }
+        #inputs{
+            border: none;
+        }
+        #h2{
+        right: 100px;
+        position: fixed;
+        top:50px;
+        font-size:40px;
+        }
+        #start{
+            width:fit-content;
+            position:fixed;
+            top:180px;
+            left:130px;
+        }
+        #stop{
+            width:fit-content;
+            position:fixed;
+            top:230px;
+            left:130px;
+        }
+    }

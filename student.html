@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="student.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+   <div id="h1">&nbsp;BUS LOCATION<div>
+   <div><a id="h3" href="home.html">==>HOMEPAGE</a></div>
+   </nav><br><br>
+  <div id="map"> </div>
+  <div id="inputs">
+      <br><br> 
+    <p>&nbsp;&nbsp;Enter the Bus Number to Track</p><br><br>
+    <input type="number" name="busno" id="busno"/><br><br>
+    <input type="button" id="start"  onclick="startt()" value="TRACK BUS"/><br><br>
+    <input type="button" id="stop"  onclick="stopp()" value="STOP"/>
+  </div>
+</body>
+
+<script>
+//MAP API
+    var bus=L.icon({
+      iconUrl:"icon31.png",
+      iconSize:[30,30],
+      iconAnchor:[15,15]
+    })
+    var myloc=L.icon({
+      iconUrl:"mylocation.png",
+      iconSize:[30,30],
+      iconAnchor:[15,15]
+    })
+    var map = L.map('map').setView([12.9709819,80.0423042], 15);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=J94sGuRVyXXwRgEQOHUG',{
+      tileSize: 512,
+      zoomOffset: -1,
+      minZoom: 1,
+      //attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+      crossOrigin: true
+    }).addTo(map);
+    //var busmarker=L.marker([12.9709819,80.0423042],{icon: bus}).addTo(map);
+</script>
+
+<script>
+inter=null;
+var traclat;
+var traclon;
+const startbut=document.getElementById('start');
+const stopbut=document.getElementById('stop');
+
+function startt(){
+
+startbut.style.display="none";
+stopbut.style.display="block";
+var busno=document.getElementById('busno').value;var j=1;
+ajx(busno);
+inter=setInterval( ()=>{ajx(busno);
+      console.log(j++);},2000);
+  
+}
+
+function stopp(){
+  clearInterval(inter);
+startbut.style.display="block";
+stopbut.style.display="none";
+}
+
+//AJAX REQUEST
+function ajx(busno){
+  $.ajax({
+        url:'http://192.168.12.252:8080/frontend/studentconnectgittest.php',
+        type:'GET',
+        data:{"bus": busno},
+        dataType:'JSON',
+        success: function(response){
+    map.setView(new L.LatLng(response.latitude,response.longitude),14.5);
+    var ico="icon"+busno+".png";
+    var bus=L.icon({
+         iconUrl:ico,
+         iconSize:[30,30],
+         iconAnchor:[15,15]
+       })
+    var mar=L.marker([response.latitude,response.longitude],{icon: bus}).addTo(map);
+      }
+    });
+}
+
+</script>
+</html>
+
+  
