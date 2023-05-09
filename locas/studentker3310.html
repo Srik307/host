@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="student.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+   <div>BUS LOCATION</div><div class="log"><button onclick="rep()">LOGOUT</button></div>
+  </nav>
+  <br><br>
+
+  <div id="map"> 
+  </div>
+
+  <div id="inputs">
+      <br><br> 
+      <h1 id="h2">Enter the Bus Number to Track</h1><br><br>
+      <input type="number" name="busno" id="busno"/><br>
+      <input type="button" id="start"  onclick="startt()" value="TRACK BUS"/><br><br>
+      <input type="button" id="near" onclick="near()" value="Near me"/>  
+      <input type="button" id="stop"  onclick="stopp()" value="STOP"/>
+  </div>
+</body>
+<footer id="foot">@ESR2023</footer>
+
+<script>
+    var bus=L.icon({
+      iconUrl:"icons/31.png",
+      iconSize:[30,30],
+      iconAnchor:[15,15]
+    })
+
+    var map = L.map('map').setView([12.9709819,80.0423042], 15);
+    //Maptiler API CALL
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=J94sGuRVyXXwRgEQOHUG',{
+      tileSize: 512,
+      zoomOffset: -1,
+      minZoom: 1,
+      crossOrigin: true
+    }).addTo(map);
+
+</script>
+
+<script>
+
+inter=null;
+const startbut=document.getElementById('start');
+const stopbut=document.getElementById('stop');
+const status= document.getElementById("h2");
+
+function startt(){
+var busno=document.getElementById('busno').value;
+status.textContent="STARTED TRACKING BUS "+busno;
+ajx(busno);
+startbut.style.display="none";
+stopbut.style.display="block";
+
+//Interval loop to constantly check bus loction
+inter=setInterval(function(busno){
+$(".leaflet-marker-icon").remove();
+ajx(busno);
+console.log(11);
+},9000,busno);
+}
+
+function stopp(){
+clearInterval(inter);//to stop interval loop
+startbut.style.display="block";
+stopbut.style.display="none";
+status.textContent="STOPPED TRACKING";
+}
+
+var myloc=L.icon({
+      iconUrl:"mylocation.png",
+      iconSize:[30,30],
+      iconAnchor:[15,15]
+    });
+//AJAX REQUEST
+function ajx(busno){
+  $.ajax({
+        url:'studentconnect.php',
+        type:'GET',
+        data:{"bus": busno},
+        dataType:'JSON',
+        success: function(response){
+        map.setView(new L.LatLng(response.latitude,response.longitude),14.5);
+        var ico="icons/"+busno+".png";//setting the marker at derived coordinates
+        var bus=L.icon({
+         iconUrl:ico,
+         iconSize:[30,30],
+         iconAnchor:[15,15]
+       })
+        var mar=L.marker([response.latitude,response.longitude],{icon: bus}).addTo(map);
+       }
+    });
+}
+
+function near(){
+  locate();
+  mark();
+}
+var myloc=L.icon({
+      iconUrl:"mylocation.png",
+      iconSize:[30,30],
+      iconAnchor:[15,15]
+    })
+function locate(){
+    if (navigator.geolocation) {
+    window.navigator.geolocation.getCurrentPosition(showLocation, checkError);
+     } else {
+     alert("The browser does not support geolocation");
+      }
+       }
+
+  //FUNCTION for error alerts
+  function checkError(error) {
+    switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("Please allow access to location");
+      stopp();
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location Information unavailable");
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out");
+     }
+     }
+
+  //FUNCTION to store the coordinates   
+  const showLocation = async (position) => {
+  var lat=`${position.coords.latitude}`;
+  var lon=`${position.coords.longitude}`;
+  map.setView(new L.LatLng(lat,lon),14);
+  var mymarker= L.marker([lat,lon],{icon: myloc}).addTo(map);
+}
+
+function mark(){
+  document.getElementById('h2').textContent="Showing Buses Near You"
+  var i;
+  for(i=1;i<39;i++){
+   setTimeout((i)=>
+   {console.log(i);
+    $.ajax({
+        url:'studentconnect.php',
+        type:'GET',
+        data:{"bus": i},
+        dataType:'JSON',
+        success: function(response){
+        var ico="icons/"+i+".png";//setting the marker at derived coordinates
+        var bus=L.icon({
+         iconUrl:ico,
+         iconSize:[30,30],
+         iconAnchor:[15,15]
+       })
+        var mar=L.marker([response.latitude,response.longitude],{icon: bus}).addTo(map);
+       }
+    });},500,i);
+  }
+}
+
+ function rep(){
+  location.replace("login.html");
+ }
+</script>
+</html>
+
+  

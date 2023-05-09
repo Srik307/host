@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="logincss.css"/>
+</head>
+<body>
+<div class="head">WELCOME TO LOCAS NETWORK</div>
+	<div class="container">
+        <form id="input">
+        <h1>LOGIN</h1>
+			<div>
+				<label for="uname"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" id="uname" required>
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" id="psw" required>
+				<br><br>
+                <input type="radio" name="who" value="driver">DRIVER</input>
+                &nbsp;&nbsp;<input type="radio" name="who" value="student">STUDENT</input>
+                <button type="button" id="go">Login</button>
+			</div>
+        </form>
+	</div>
+</body>
+<script>
+   document.getElementById('go').onclick=function(){
+   var user=document.getElementById('uname').value;
+   var psw=document.getElementById('psw').value;
+
+   var input=document.getElementById('input');
+   var who= input.elements["who"].value;
+   switch(who){
+
+  case "student":
+   if(user=="Citchennai" && psw=="cit"){
+    location.replace("studentker3310.html");}
+   else{alert("NO USER FOUND");};
+   break;
+ 
+  case "driver":
+  if(user=="Driver" && psw=="cit"){
+    location.replace("driverkir8916.html");}
+  else{alert("NO USER FOUND");};
+   break;
+
+  }
+   }
+</script>
+</html>
