@@ -1,0 +1,170 @@
+body{
+    background-image: url("breal.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#tab{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 40px;
+}
+#log{
+    width: 1000px;
+    height: 40px;
+    display: flex;
+    flex:1;
+}
+#log img{
+    margin-left:20px;
+    height: 40px;
+    width: 40px;
+}
+#log a{
+    margin-left: 10px;
+    height: 40px;
+    width: fit-content;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    transition: 3ms;
+}
+#menu{
+    width: fit-content;
+    height: 40px;
+    padding-top: 10px;
+}
+#menu a{
+    margin-right: 30px;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px 20px 5px 20px;
+}
+#main{
+    display: flex;
+}
+#content{
+    margin-top: 50px;
+    color: white;
+    background-color: none;
+    width: 45%;
+    height: fit-content;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+#content img{
+    width: 500px;
+    height: 300px;
+}
+#contact{
+    overflow: hidden;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 80px;
+    height:fit-content;
+    padding-bottom: 20px;
+    width: 27%;
+}
+#contacttab{
+    flex: 1;
+    height:fit-content;
+    background-color:#01579B;
+}
+#contacttab h1{
+    height: fit-content;
+    color: white;
+    display: inline-block;
+}
+#contacttab img{
+    margin-top: 5%;
+    margin-right: 5%;
+    float: right;
+    width: 20px;
+    height: 20px;
+    display:none;
+}
+.inp{
+    padding-left: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    font-size: larger;
+    font-weight: bold;
+}
+#contact p{
+    padding-left: 20px;
+    width: 100%;
+    height: auto;
+}
+.des{
+    height: fit-content;
+    font-size: small;
+    font-weight: bold;
+}
+#but{
+    margin-left: 35%;
+    margin-right: 20%;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color:#01579B;
+    transition: 2ms;
+}
+#but:hover{
+    background-color: grey;
+    transform: scale(1.1);
+}
+
+#log a:hover{
+    background-color: grey;
+}
+
+@media only screen and (max-width:700px){
+    #main{
+        flex-direction: row;
+    }
+    #content{
+        margin-left: 20px;
+        height: auto;
+        width: fit-content;
+    }
+    #content h1{
+        width:100%;
+    }
+    #content p{
+        height: fit-content;
+    }
+    #content img{
+        width: 150%;
+        padding-right: 20px;
+    }
+    #contact{
+        position:fixed;
+        top:10%;
+        width: 90%;
+        margin-right: 5px;
+        margin-left: 5px;
+        display: none;
+
+    }
+    #tab{
+        width: 100%;
+    }
+    #log a{
+        font-size:120%;
+    }
+    #log img{
+        width: 10%;
+        height:60%;
+    }
+    #menu{
+        display: none;
+    }
+    
+}

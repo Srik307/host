@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hashtronics</title>
+        <link rel="stylesheet" href="styleland.css"/>
+    </head>
+    <body>
+        <div id="tab">
+            <div id="log"><img src="logo.png"/><a id="tit">Hashtronics</a></div>
+        <div id="menu">
+            <a>Login</a><a>Get Started</a>
+        </div></div>
+        <div id="main">
+        <div id="content"><h1>Embedded and Microcontroller</h1>
+            <p>Best Quality Electronics Whole&Retail sale</p>
+            <img src="b1.jpg">
+        </div>
+        <div id="contact">
+           <center><div id="contacttab">
+            <h1>WELCOME</h1><img src="bg2close.png" onclick="clos()"></div></center>
+           <p>Updates and Subscription can be send to the email,according to your specifications</p>
+           <p class="des">Name</p>
+            <input class="inp" type="text"/>
+            <br><br>
+            <p class="des">Email</p>
+            <input class="inp" type="email"/>
+            <br><br><br>
+            <input id="but" type="button" value="Get Started"/>
+        </div>
+    </div>
+    </body>
+    <script>
+        if(window.matchMedia("(max-width:700px)").matches){
+            setTimeout(()=>{
+                document.getElementById("contact").style.display="block";
+                document.querySelector("#contacttab img").style.display="block";
+            },3000)}
+                   
+        function clos(){
+            if(!(window.matchMedia("(max-width:700px)").matches)){
+            document.getElementById("contact").style.display="none";}
+        }
+        </script>
+</html>
