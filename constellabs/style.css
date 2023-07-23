@@ -1,0 +1,103 @@
+body{
+    height: 100%;
+}
+
+
+
+/*firstbox*/
+#nav{
+  padding: 20px;
+  background: none;
+  border-color: rgba(48,49,51,0);
+  transition: 0.1s;
+}
+.logobar img{
+    height: 100px;
+    width:140px;
+}
+
+.container-fluid{
+    align-content: center;
+    background: none;
+    display: flex;
+
+}
+.navtab{
+    display: block;
+    text-align: center;
+    margin-top:3em;
+    width: 90em;
+}
+
+.list-inline li{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 3em;
+    letter-spacing: 0.05em;
+}
+
+.list-inline li a{
+    color: #ffffff;
+}
+
+.linkedin{
+   margin-top: 3em;
+   width: 10em;
+   text-align: right;
+}
+
+.firstbox video{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity:0.95;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#content{
+    height: 70vh;
+    width: 100%;
+}
+
+#content h1 span{
+    margin-top: 50vh;
+    font-family: 'poppins',sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+#content p{
+    color: #ffffff;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+
+
+@media(max-width: 1000px){
+ .firstbox{
+    min-height: 600px;
+ }
+ .logobar img{
+    height: 70px;
+    width:70px;
+ }
+ #nav{
+    background-color: black;
+ }
+ .img1 img{
+    width: auto;
+    min-height: 100px;
+}
+    
+}
