@@ -2,7 +2,7 @@
 var count=0;
 
 document.addEventListener("scroll",()=>{
-    if(document.documentElement.scrollTop>=90 && count==0){
+    if(window.scrollY>=90 && count==0){
     document.getElementById("nav").style.backgroundColor="black";
 }
 else{

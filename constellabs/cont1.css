@@ -1,0 +1,183 @@
+.mainimgcont{
+    width: 100%;
+    height: 55vh;
+    background-image:url("bag-and-hands.jpg");
+    background-position: center;
+    box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainimgcont h1{
+    position: absolute;
+    top:30%;left: 10%;
+    font-family: 'poppins',sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.flexcontainercont{
+    padding-bottom: 20vh;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+}
+
+#contform{
+    overflow: hidden;
+    height: fit-content;
+    width:45%;
+}
+
+.contact{
+    padding-top: 10vh;
+    padding-left: 20px;
+    height: 60vh;
+    width:45%;
+}
+.add h1{
+    padding-top: 5vh;
+    border-top: 1px solid rgb(206, 203, 203);
+    font-family: 'poppins',sans-serif;
+    font-size: 30px;
+}
+
+.add p{
+    margin-top: 5vh;
+    border-bottom: 1px solid rgb(206, 203, 203);
+}
+
+.head{
+    font-family: 'poppins',sans-serif;
+    margin-top: 5vh;
+    padding-left: 10px;
+    height: fit-content;
+}
+.head h4{
+    padding-bottom: 5vh;
+}
+.head p{
+    padding-top: 10px;
+    color: #555;
+    width: 79%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(206, 203, 203);
+}
+
+#sub:hover{
+    color: #6442ff;
+    background-color: transparent;
+    border: 3px solid #6442ff;
+ }
+#sub{
+    transition: 0.2s;
+    color:#ffffff;
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    width: 50%;
+    height: 7vh;
+    background-color: #6442ff;
+}
+
+#textarea{
+    border-top:1px solid rgb(206, 203, 203);
+    border-right: 1px solid rgb(206, 203, 203);
+    border-left: 1px solid rgb(206, 203, 203);
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 10px 0;
+    margin-top: 8vh;
+    width: 81%;
+  }
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid rgb(206, 203, 203);;
+    outline: 0;
+    font-size: 1.5rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color:transparent;
+      }
+    
+      &:placeholder-shown ~ .form__label {
+        font-size: 1.5rem;
+        cursor: text;
+        top: 20px;
+      }
+  }
+
+  .form__label {
+    position: absolute;
+    top: 0;
+    margin-left: 10px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    color: gray;
+  }
+
+  .form__field:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1.2rem;
+      color: #11998e;
+      font-weight:700;    
+    }
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right,#11998e,#38ef7d);
+    border-image-slice: 1;
+  }
+
+
+  @media(max-width:700px){
+    .flexcontainercont{
+        flex-direction: column;
+    }
+    .flexcontainercont div{
+        width: 100%;
+    }
+    #contform{
+        width: 100%;
+        padding-right: 10%;
+    }
+    .form__group{
+        width: 51%;
+    }
+    .head p{
+        width: 98%;
+    }
+    #sub{
+        margin-left: 7%;
+        margin-right: 10%;
+        width: 90%;
+        
+    }
+
+
+  }
+
+  @media (max-width:900px) {
+
+    #sub{
+        width: 80%;
+    }
+    
+  }

@@ -1,0 +1,62 @@
+.mainimg{
+    width: 100%;
+    height: 55vh;
+    background-image:url("pic2abt.jpg");
+    box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainimg h1{
+    position: absolute;
+    top:30%;left: 10%;
+    font-family: 'poppins',sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.flexcontainer,.flexcontainer1{
+    flex-direction: row;
+   display: flex;
+   overflow: hidden;
+}
+
+.desabt1{
+    width: 30%;
+    height: 60vh;
+}
+.desabt2{
+    width: 30%;
+    height: 60vh;
+}
+#abt1img{
+    width: 70%;
+    height: 60vh;
+}
+#abt1img img{
+    width: 100%;
+}
+#abt2img{
+    width: 70%;
+    height: 60vh;
+}
+#abt2img img{
+    width: 100%;
+}
+
+
+@media (max-width:900px){
+    .flexcontainer1{
+        flex-direction: column;
+    }
+    .flexcontainer div,.flexcontainer1 div{
+       width: 100%;
+    }
+    #abt1img,#abt2img{
+        width:100%;
+        height: 30vh;
+    }
+    .flexcontainer{
+        flex-direction: column-reverse;
+    }
+}

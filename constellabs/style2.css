@@ -1,82 +1,59 @@
 .secondbox{
-    width:100%;
-    height: fit-content;
+    background-color: white;
+}
+#tab{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 5vh;
 }
 
-#litab li{
-    float: none;
-    display: inline-block;
-    width:fit-content;
-}
-
-
-#litab{
-    text-align: center;
-}
-#litab li a{
-    margin-right: 20px;
-    padding: 25px;
+#tab li a{
     font-size: 20px;
     font-family: 'poppins', sans-serif;
     color: #555;
+    padding: 30px;
     border-top: none;
     border-left: none;
     border-right: none;
 }
-#litab li .active{
+
+#tab li .active{
     color: #6442ff;
 }
 
-#litab li a:hover{
+#tab li a:hover{
     color: #6442ff;
 }
 
-.flex-container {
+.flex-container{
     display: flex;
-    align-items: stretch;
-    flex: 0 0 100%;
     flex-direction: row;
-    width:100%;
+    margin-top: 10vh;
+    padding-bottom: 30vh;
+    justify-content: space-around;
 }
 
-  .flex-container div {
-    padding-top: 10vh;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-    flex-grow: 3;
-  }
 
+@media (max-width:600px){
 
-@media (max-width: 700px) {
-
-
-    .flex-container{
+    #tab{
         flex-direction: column;
+        text-align: center;
     }
+    .flex-container{
+        margin-top: 1vh;
+        flex-direction: column;
+        text-align: center;
+    }
+    .flex-container div{
+        padding: 10vh;
+    }
+
     .img1{
         display: none;
     }
-
     .img2{
         display: none;
-    }
-
-}
-@media (min-width: 1300px){
-
-    .flex-container{
-        position: absolute;
-        width: 1500px;
-        left: 0px;;
-        justify-content: left;
-    }
-    .flex-container div{
-        margin-right:0px;
-    }
-    .thirdbox{
-        margin-top: 70vh;
-    }
-
+    }   
 }
