@@ -1,0 +1,400 @@
+
+/* Reset some default styles */
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the navigation bar */
+.navbar {
+    background-color:none;/* Background color for the navbar */
+    overflow: hidden; /* Clear floats */
+}
+
+/* Style for the logo on the left side */
+.navbar .logo {
+    float: left;
+    padding: 2vw 2.5vw; /* Adjust as needed */
+    color: white;
+    font-size: 6vw;
+    text-decoration: none;
+}
+
+/* Style for the right side navigation links */
+.navbar .nav-links {
+    float: right;
+}
+
+/* Style for individual navigation links */
+.navbar .nav-links a {
+    font-size: 18px;
+    display: inline-block;
+    padding: 2vw 2.5vw; /* Adjust as needed */
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for hover effect on links */
+.navbar .nav-links a:hover {
+    color: aqua; /* Background color on hover */
+}
+
+#menu{
+    display: none;
+}
+
+
+#maindiv{
+    height: 15vh;
+
+   
+}
+#lets{
+    display: flex;
+    justify-content: center;
+}
+#connect{
+    display: flex;
+    justify-content: center;
+}
+
+#maindiv2{
+    height: 15vh;
+    
+}
+#what{
+    display: flex;
+    justify-content: center;
+}
+#card{
+    display: flex;
+    flex-direction: row;
+}
+#quote{
+    display: flex;
+    justify-content: center;
+}
+#maindiv4{
+    height: 15vh;
+}
+/* CSS for the footer */
+footer {
+background-color: #333; /* Background color */
+color: #fff; /* Text color */
+padding: 2.5vw; /* Padding around content */
+text-align: center; /* Center-align text */
+}
+
+/* Style for the links in the footer */
+footer a {
+color: #fff; /* Link color */
+text-decoration: none; /* Remove underline */
+margin: 0 1vw; /* Add space between links */
+}
+
+
+#maindivimagine{
+    background-color:black;
+    padding-top: 5vh;
+}
+#anotherdivimagine{
+    margin-top: 10vh;
+    background-color:none;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+#span1{
+    color:aliceblue;
+    font-size: 4vw;
+    font-family:sans-serif;
+    font-weight: bold;
+    letter-spacing:0.13em;
+}
+#fontdiv{
+    height: fit-content;
+    padding: 1vw;
+    text-align: center;
+}
+#imaginefont{
+    font-size: 8vw;
+    letter-spacing: 0.3rem;
+    background:linear-gradient(to right, #f32170,#ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+}
+#connectdiv{
+    background-color:#262626;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border-radius: 2.5vw;
+}
+#connectbutton{
+    width:fit-content;
+    height: 70px;
+    background:linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text; 
+   font-size: 30px;
+   border-radius: 10px;
+   font-weight: bold;
+}
+#carddiv{
+    width: 100%;   
+}
+#offerdiv{
+    text-align: center;
+    color: aliceblue;
+    font-weight: 900;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+#maincarddiv{
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5vw;
+}
+.card{
+    color: #fff;
+    border-radius: 20px;
+    border: 2px solid white;
+    background: none;
+    transition: all 0.6s;
+    width:80vw;
+}
+.card-img-top{
+    margin-top: 10vh;
+}
+.card-title{
+    font-size:5vw;
+    text-align: center;
+}
+#maincarddiv2{
+    margin-top: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5vw;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#maindiv3{
+    background-color: black;
+
+}
+#para1{
+    background:linear-gradient(to right, #f32170,#ff6b08, #cf23cf, #eedd44);
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+   font-size: 9vw;
+   text-align: center;
+   padding-left: 10%;
+   padding-right: 10%;
+   font-weight: bolder;
+   margin-top: 30vh;
+}
+#workdiv{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap:5vh;
+}
+#para2{
+    text-align: center;
+    font-size:50px;
+    font-weight: bolder;
+    color: aliceblue;
+
+}
+.imagediv{
+    background-color:white;
+    height:50vh;
+    margin-left: auto;
+    margin-right:auto;
+    width: 90%;
+    border-radius: 20px;
+}
+#mainfooterdiv{
+    background-color:#262626;
+    width: 100%;
+    margin-top: 10vh;
+    color: aliceblue;
+}
+#mainfooterdiv2{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+#para3{
+    text-align: center;
+    font-size:30px;
+    font-weight: bolder;
+    color: aliceblue;
+}
+.ruler{
+    border: 2px solid white;
+}
+#logo1{
+    width:30%;
+    margin-right:auto;
+    margin-left:auto;
+    text-align: center;
+}
+
+#tit{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items:baseline;
+    padding-left: 3vw;
+    font-size: 40px;
+    display: block;
+    color: aliceblue;
+}
+
+
+
+.logoimg{
+    padding-left: 2vw;
+    width: 100px;
+    height: 100px;
+}
+
+
+#lastdiv1{
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+    font-size: 20px;
+    margin-top:5vh;
+}
+#copyrightdiv{
+    width: fit-content;
+}
+#svgdiv{
+    display: flex;
+    flex-direction: row;
+    gap:30px; 
+}
+#policydiv{
+    display: flex;
+    flex-direction: row;
+
+}
+.svg{
+    height: 20px;
+}
+
+#side{
+    position: absolute;
+    padding-left: 7%;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    width: 100%;
+    background-color:black;
+    z-index: -1;
+    transition: height 5s;
+    overflow: hidden;
+
+}
+    #sidenav{
+        row-gap: 3vh;
+    }
+    #sidenav a{
+        font-size: 13px;
+        color: aliceblue;
+        text-decoration: none;
+    }
+
+    #sidenav a:hover{
+        color: aqua;
+    }
+
+    .card:hover{
+        transform: scale(1.1);
+        border-color: #9ecaed;
+        box-shadow: 0 0 80px #9ecaed;
+    }
+
+
+
+
+
+@media (max-width: 670px){
+
+
+
+
+
+    #lastdiv1{
+        flex-direction: column;
+        align-items: center;
+        row-gap:3vh;
+    }
+
+
+    #policydiv{
+        align-items: center;
+        flex-direction: column;
+        row-gap: 2vh;
+
+    }
+
+
+    #maincarddiv2{
+        align-items: center;
+        row-gap: 5vh;
+        flex-direction: column;
+    }
+
+    #maincarddiv{
+        row-gap: 5vh;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #connectbutton{
+        font-size: 5vw;
+        height: 7vh;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .logoimg{
+        width:40%;
+        height: 15vw;
+    }
+
+    #tit{
+        font-size: 5vw;
+        padding-bottom: 5px;
+        padding-left: 10px;
+    }
+
+    #menu{
+        display: block;
+        padding-right: 2%;
+    }
+
+    #menu img{
+        width:90%;
+        height: 10vw;
+    }
+
+}
