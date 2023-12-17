@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.js"></script>
+</head>
+<body>
+    <h2>Upload Result pdf here</h2>
+    <input type="file" id="fileInput" accept=".pdf">
+    <h5>Only for CSBS</h5>
+    <h1 id="res"></h1>
+    <script>
+        var a=0;
+const courses = [
+  'Linear Algebra',
+  'Advanced  Data Structures and Algorithms',
+  'Modern Database Technology',
+  'Web Technology',
+  'Business Analytics',
+  'Advanced Java Programming',
+  'Heritage of Tamils',
+  'Employability Enhancement Skills - III'
+];
+
+const points={
+  "O": 10,
+  "A+": 9,
+  "A": 8,
+  "B+": 7,
+  "B": 6,
+  "C": 5
+};
+const total=25;
+
+const credits={
+  "Linear Algebra": 4,
+  "Advanced  Data Structures and Algorithms": 4,
+  "Modern Database Technology": 4,
+  "Web Technology": 4,
+  "Business Analytics": 3,
+  "Advanced Java Programming": 4,
+  "Heritage of Tamils": 1,
+  "Employability Enhancement Skills - III": 1
+}
+
+
+// Now, courses is an array containing the items you mentioned
+console.log(courses);
+const grades={}
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const fileReader = new FileReader();
+
+            fileReader.onload = function () {
+                const typedarray = new Uint8Array(fileReader.result);
+                // Load PDF document
+                pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+                    let totalPages = pdf.numPages;
+                    let extractedText = '';
+
+                    // Extract text from each page
+                    for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+                        pdf.getPage(pageNumber).then(function(page) {
+                            page.getTextContent().then(function(textContent) {
+                                console.log(textContent.items[0]);
+                                const arr=textContent.items;
+                                for(let i=0;i<arr.length;i++){
+                                    console.log(arr[i].str);
+                                    if(courses.indexOf(arr[i].str.trim())!=-1){
+                                        if(arr[i+1].str!=" "){
+                                        grades[arr[i].str]=arr[i+1].str;
+                                        console.log(arr[i+1].str);
+                                        }
+                                        else{
+                                            grades[arr[i].str]=arr[i+2].str; 
+                                        }
+                                    }
+                                }
+
+                                // Do something with the extracted text
+                                console.log(grades);
+                                cal();
+                            });
+                        });
+                    }
+                });
+            };
+
+            fileReader.readAsArrayBuffer(file);
+        });
+
+
+function cal(){
+    var sum=0;
+    Object.keys(grades).forEach(el=>{
+        sum=sum+(points[grades[el]]*credits[el]);
+        console.log(points[grades[el]],grades[el],credits[el]);
+    });
+    console.log(sum/total);
+    document.getElementById('res').textContent="GPA="+sum/total;
+}
+    </script>
+</body>
+</html>
